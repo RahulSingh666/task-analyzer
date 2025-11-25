@@ -3,8 +3,13 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+
 SECRET_KEY = 'replace-this-with-secure-key'
-DEBUG = True
+import os
+DEBUG = os.environ.get("DEBUG", "False") == "True"
+
 
 ALLOWED_HOSTS = ['*']
 
@@ -14,6 +19,12 @@ INSTALLED_APPS = [
     'rest_framework',
     'tasks',
 ]
+
+MIDDLEWARE = [
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+    'django.middleware.common.CommonMiddleware',
+]
+
 
 MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',

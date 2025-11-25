@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Smart Task Analyzer</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Smart Task Analyzer</h1>
+
+    <section class="input">
+      <h2>Add Task</h2>
+      <form id="taskForm">
+        <input id="t_title" placeholder="Title" required />
+        <input id="t_due" placeholder="Due date (YYYY-MM-DD)" />
+        <input id="t_est" placeholder="Estimated hours" type="number" step="0.1" />
+        <input id="t_imp" placeholder="Importance (1-10)" type="number" min="1" max="10" />
+        <input id="t_deps" placeholder="Dependencies (comma-separated IDs)" />
+        <button type="submit">Add</button>
+      </form>
+
+      <h3>Or paste JSON array</h3>
+      <textarea id="bulk" rows="6" placeholder='[{"id":"x","title":"...","due_date":"2025-11-30", "estimated_hours":2, "importance":7, "dependencies": []}]'></textarea>
+      <div class="controls">
+        <label for="strategy">Strategy:</label>
+        <select id="strategy">
+          <option value="smart_balance">Smart Balance</option>
+          <option value="fastest_wins">Fastest Wins</option>
+          <option value="high_impact">High Impact</option>
+          <option value="deadline_driven">Deadline Driven</option>
+        </select>
+        <button id="analyzeBtn">Analyze Tasks</button>
+        <button id="suggestBtn">Suggest Top 3</button>
+      </div>
+    </section>
+
+    <section class="output">
+      <h2>Results</h2>
+      <div id="results"></div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
