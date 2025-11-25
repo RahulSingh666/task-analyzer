@@ -2,7 +2,7 @@ services:
   - type: web
     name: smart-task-analyzer
     env: python
-    buildCommand: "pip install -r requirements.txt"
+    buildCommand: "pip install -r backend/requirements.txt"
     startCommand: "cd backend && gunicorn task_analyzer.wsgi:application"
     envVars:
       - key: PYTHON_VERSION
