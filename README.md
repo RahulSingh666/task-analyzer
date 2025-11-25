@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Smart Task Analyzer
 
 This repository implements the Smart Task Analyzer described in the assignment PDF. :contentReference[oaicite:1]{index=1}
@@ -16,3 +17,6 @@ This repository implements the Smart Task Analyzer described in the assignment P
    ```bash
    python -m venv venv
    source venv/bin/activate   # Windows: venv\Scripts\activate
+=======
+# task-analyzer
+>>>>>>> 9e4cdd5612fd10ca6ae887557eecc72d7ef5ceea
