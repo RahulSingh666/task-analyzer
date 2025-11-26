@@ -1,9 +1,18 @@
 services:
   - type: web
-    name: smart-task-analyzer
+    name: task-analyzer
     env: python
-    buildCommand: "pip install -r backend/requirements.txt"
-    startCommand: "gunicorn task_analyzer.wsgi:application --chdir backend"
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: gunicorn task_analyzer.wsgi:application --chdir backend
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10
+services:
+  - type: web
+    name: task-analyzer
+    env: python
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: gunicorn task_analyzer.wsgi:application --chdir backend
     envVars:
       - key: PYTHON_VERSION
         value: 3.10
