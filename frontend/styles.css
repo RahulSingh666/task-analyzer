@@ -1,0 +1,153 @@
+/* -----------------------------
+   GLOBAL
+--------------------------------*/
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  background: linear-gradient(to bottom right, #f8fafc, #eef2ff);
+  margin: 0;
+  padding: 0;
+  transition: background 0.35s ease, color 0.35s ease;
+}
+
+/* Smooth transitions */
+* {
+  transition: background 0.25s ease, color 0.25s ease, border-color .25s ease;
+}
+
+/* -----------------------------
+   CARDS (Glass Effect)
+--------------------------------*/
+.card {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.08);
+  transition: 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 45px rgba(0, 0, 0, 0.12);
+}
+
+/* -----------------------------
+   INPUTS
+--------------------------------*/
+input, textarea, select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,0.12);
+  background: rgba(255,255,255,0.85);
+  font-size: 15px;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: #6366f1;
+  outline: none;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(99,102,241,0.25);
+}
+
+/* -----------------------------
+   BUTTONS
+--------------------------------*/
+button {
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 14.5px;
+  cursor: pointer;
+  border: none;
+  transition: 0.25s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+/* -----------------------------
+   LOADER
+--------------------------------*/
+.loader {
+  border: 4px solid rgba(0,0,0,0.06);
+  border-left-color: #4f46e5;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* -----------------------------
+   FADE ANIMATIONS
+--------------------------------*/
+.fade-in {
+  opacity: 0;
+  transform: translateY(6px);
+  animation: fadeIn .35s forwards ease;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* -----------------------------
+   DARK MODE
+--------------------------------*/
+html.dark {
+  background: linear-gradient(to bottom right, #0d1117, #1a2333);
+  color: #e6eef6;
+}
+
+html.dark .card {
+  background: rgba(11,17,27,0.7);
+  border-color: rgba(255,255,255,0.08);
+}
+
+html.dark input,
+html.dark textarea,
+html.dark select {
+  background: rgba(10,18,28,0.75);
+  color: #cfe7ff;
+  border-color: rgba(255,255,255,0.12);
+}
+
+html.dark button {
+  color: white;
+}
+
+html.dark footer {
+  color: rgba(255,255,255,0.55);
+}
+
+/* -----------------------------
+   RESULTS PANEL
+--------------------------------*/
+#results > div {
+  animation: fadeIn 0.25s ease;
+}
+
+/* -----------------------------
+   MOBILE
+--------------------------------*/
+@media (max-width: 768px) {
+  .card {
+    padding: 16px;
+  }
+  button {
+    width: 100%;
+  }
+}
